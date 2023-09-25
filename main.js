@@ -12,10 +12,9 @@ function initMap() {
     fetch('mongodb-data.json') // JSON 파일의 경로
         .then(response => response.json())
         .then(data => {
-            data.forEach(({ _id, lat, lon }) => {
+            data.forEach(({ lat, lon }) => {
                 const marker = new google.maps.Marker({
                     position: { lat: parseFloat(lat), lng: parseFloat(lon) },
-                    
                     map: map
                 });
                 bounds.extend(marker.position);
