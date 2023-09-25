@@ -15,7 +15,7 @@ function initMap() {
             data.forEach(({ _id, lat, lon }) => {
                 const marker = new google.maps.Marker({
                     position: { lat: parseFloat(lat), lng: parseFloat(lon) },
-                    label: _id, // 레이블로 _id 사용 (원하는 필드 사용 가능)
+                    
                     map: map
                 });
                 bounds.extend(marker.position);
