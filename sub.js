@@ -17,10 +17,10 @@ async function getDataAndSaveToFile() {
     const database = client.db();
     const collection = database.collection(collectionName);
 
-    // 데이터 가져오기 (예: 모든 문서 가져오기)
+    // 데이터 가져오기
     const documents = await collection.find({}).toArray();
 
-    // 데이터를 파일에 저장 (mongodb-data.json 파일 생성)
+    // 데이터를 파일에 저장
     fs.writeFileSync('mongodb-data.json', JSON.stringify(documents, null, 2));
     console.log('mongodb-data.json 파일이 생성되었습니다.');
   } catch (err) {
